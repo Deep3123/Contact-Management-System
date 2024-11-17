@@ -85,7 +85,7 @@ Ensure you have the following installed:
 The backend will run on `http://localhost:5000`.
 
 #### Frontend Setup
-1. Navigate to the `frontend ` directory:
+1. Navigate to the `frontend` directory:
    ```bash
    cd frontend
 
