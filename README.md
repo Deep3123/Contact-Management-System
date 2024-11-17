@@ -1,63 +1,123 @@
-# Contact-Management-System
+# MERN Contact Management System
 
-This is a **Contact Management System** created using the **MERN stack** (MongoDB, Express.js, React.js, Node.js).
+A **Contact Management System** built using the **MERN Stack**: MongoDB, Express.js, React.js, and Node.js.
+
+---
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Application Structure](#application-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [Backend Setup](#backend-setup)
+    - [Frontend Setup](#frontend-setup)
+- [Available Routes](#available-routes)
+  - [Backend Routes](#backend-routes)
+  - [Frontend Routes](#frontend-routes)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
 
 ## Overview
-This application allows users to manage their contacts in a simple and efficient manner. You can create, edit, and delete contacts through a user-friendly interface.
-
-## Features:
-- User Authentication (Login/Signup)
-- Add, Edit, and Delete Contacts
-- Search and Filter Contacts
-
-## Technologies Used:
-- **MongoDB**: For database management
-- **Express.js**: Backend web framework
-- **React.js**: Frontend UI framework
-- **Node.js**: JavaScript runtime environment
+This application allows users to manage their contacts, offering features like creating, updating, deleting, and searching contacts. Secure user authentication ensures that each user’s data is protected.
 
 ---
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run the following commands:
-
-### `yarn start`
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-Launches the test runner in interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.\
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-For more information about deployment, see the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment).
-
-### `yarn eject`
-**Note: This is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.\
-Instead, it will copy all the configuration files and transitive dependencies (Webpack, Babel, ESLint, etc.) right into your project so you have full control over them.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and medium deployments.
+## Features
+- **User Authentication**: Secure sign-up and login with JWT-based authentication.
+- **Contact CRUD**: Create, read, update, and delete contacts.
+- **Search and Filter**: Quickly search and organize contacts.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
 
 ---
 
-## Backend Configuration
+## Technologies Used
+- **MongoDB**: NoSQL database for storing contacts and user data.
+- **Express.js**: Backend web framework for API development.
+- **React.js**: Frontend library for building the user interface.
+- **Node.js**: JavaScript runtime for backend development.
+- **JWT (JSON Web Tokens)**: Authentication and session management.
+- **Bcrypt.js**: Password encryption for secure user credentials.
 
-The backend requires a few configuration settings to work correctly.
+---
 
-1. Go to the **config** folder in the backend directory and create a new file named `config.env`.
+## Application Structure
+The project is divided into two main parts:
+1. **Frontend**: React.js application for managing contacts.
+2. **Backend**: Express.js application for APIs, authentication, and database interaction.
 
-2. Add the following details to the `config.env` file:
+---
+
+## Getting Started
+
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) - JavaScript runtime.
+- [MongoDB](https://www.mongodb.com/) - NoSQL database (use a local instance or MongoDB Atlas).
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/) - For managing dependencies.
+
+---
+
+### Installation
+
+#### Backend Setup
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+
+2. Install dependencies:
+   ```bash
+   npm install
+
+3. Create a `.env` file in the `backend` directory with the following variables:
+   ```bash
+   MONGODB_URI=<your_mongodb_connection_url>
+   JWT_SECRET=<your_jwt_secret_key>
+
+4. Start the backend server:
+   ```bash
+   npm start
+   
+The backend will run on `http://localhost:5000`.
+
+#### Frontend Setup
+1. Navigate to the `frontend ` directory:
+   ```bash
+   cd frontend
+
+2. Install dependencies:
+   ```bash
+   npm install
+
+3. Start the React development server:
+   ```bash
+   npm start
+   
+The frontend will run on `http://localhost:3000`.
+
+## Available Routes
+
+### Backend Routes
+
+#### User Authentication
+- `POST /api/users/register` - Register a new user.
+- `POST /api/users/login` - Login and receive a JWT token.
+
+#### Contacts Management
+- `GET /api/contacts` - Fetch all contacts for the authenticated user.
+- `POST /api/contacts` - Create a new contact.
+- `PUT /api/contacts/:id` - Update an existing contact.
+- `DELETE /api/contacts/:id` - Delete a contact.
+
+---
+
+### Frontend Routes
+- `/` - Home page (displays contacts).
+- `/add` - Add a new contact.
+- `/edit/:id` - Edit a contact.
+- `/login` - Login page.
+- `/register` - Registration page.
